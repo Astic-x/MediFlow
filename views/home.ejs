@@ -1,0 +1,98 @@
+
+  <%- include("header") -%>
+
+  <body class="bg-dark">
+    <!-- Navabar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+          <img src="images/first-aid-kit.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
+          <a class="navbar-brand mb-0 h1" href="#">MediFlow</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/">Home</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Manage
+                </a>
+                <ul class="dropdown-menu bg-dark">
+                  <li><a class="dropdown-item" href="/sell">Sell</a></li>
+                  <li><a class="dropdown-item" href="/edit">Edit Stock</a></li>
+                  <li><a class="dropdown-item" href="/restock">Restock</a></li>
+                  <li><a class="dropdown-item" href="/view">View Stock</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/#about-section">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/#footer-section">Contact</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+    <!-- Title Section -->
+
+        <section id="title" class="rounded-5">
+          <div class="container justify-content-center">
+            <div class="row">
+              <div class="big-title col-lg-6">
+                <h1>An efficient solution to fulfill all your Medical Inventory Managaement needs</h1>
+              </div>
+              <div class="big-title-img col-lg-6">
+                <img src="images/big-title-image.webp" alt="med-inventory-img" class="image-fluid">
+              </div>
+            </div>
+          </div>
+        </section>
+
+    <!-- Manage Section  -->
+        <section id="manage-section" class="bg-light rounded-5">
+          
+            <h1 class="manage-title">Manage</h1>
+          <div class="container row justify-content-evenly">
+            <button onclick="window.location.href='/sell'" type="button" class="manage-button btn btn-danger col-lg-5">
+              <h2 class="manage-button-title">Sell</h2>
+              <h5>(Update the stock by alongside selling the medicines.)</h5>
+            </button>
+            <button onclick="window.location.href='/edit'" type="button" class="manage-button btn btn-danger col-lg-5">
+              <h2 class="manage-button-title">Edit Stock</h2>
+              <h5>(Update the stock by changing stock details.)</h5>
+            </button> 
+          </div>
+          <div class="container row justify-content-evenly">
+            <button onclick="window.location.href='/restock'" type="button" class="manage-button btn btn-danger col-lg-5">
+              <h2 class="manage-button-title">Restock</h2>
+              <h5>(Update the stock by adding medicines in the stock)</h5>
+            </button>
+            <button onclick="window.location.href='/view'" type="button" class="manage-button btn btn-danger col-lg-5">
+              <h2 class="manage-button-title">View Stock</h2>
+              <h5>(View the stock)</h5>
+            </button>
+          </div>
+
+
+        </section>
+
+    <!-- About Section  -->
+        <section id="about-section" class="rounded-5">
+          <div>
+            <h1 class="about-title">About</h1>
+            <div class="container bg-light rounded-5 about-text">
+            <h4>Mediflow Manager is an efficient system to meet the all the requirements of Medical Inventory with a web based digital infrastructure. 
+              It allows an easy mangement procedure to manage the complete medical Stock from a small tablet to heavy machinery. <a href="#manage-section">Features</a>
+              include Restocking, Editing Stock, Viewing Stock and Selling from the stock.
+            </h4>
+            </div>
+          
+        </section>
+
+<%- include("footer") -%>
+
+

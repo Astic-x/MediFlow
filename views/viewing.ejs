@@ -1,0 +1,137 @@
+<%- include("header") -%>
+
+<body class="bg-dark">
+    <!-- Navabar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+          <img src="images/first-aid-kit.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
+          <a class="navbar-brand mb-0 h1" href="#">MediFlow</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/">Home</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Manage
+                </a>
+                <ul class="dropdown-menu bg-dark">
+                  <li><a class="dropdown-item" href="/sell">Sell</a></li>
+                  <li><a class="dropdown-item" href="/edit">Edit Stock</a></li>
+                  <li><a class="dropdown-item" href="/restock">Restock</a></li>
+                  <li><a class="dropdown-item" href="/view">View Stock</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/#about-section">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/#footer-section">Contact</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <div class="viewing">
+        <h1 class="viewingHeading"> <%= department %> </h1>
+          <div class="colorInfo row">
+          <div class="colorCodeDetail1 col-lg-6"></div><h5 class="col-lg-6">: Low Stock</h5>
+          </div>
+          <div class="colorInfo row">
+            <div class="colorCodeDetail2 col-lg-6"></div><h5 class="col-lg-6">: Excess Stock</h5>
+          </div>
+          <div class="colorInfo row">
+          <div class="colorCodeDetail3 col-lg-6"></div><h5 class="col-lg-6">: Expiry date is nearing.</h5>
+          </div>
+          <div class="colorInfo row">
+            <div class="colorCodeDetail4 col-lg-6"></div><h5 class="col-lg-6">: Expired</h5>
+          </div> 
+        </div>
+        
+        <% if (stock && stock.length > 0){ %>
+          <table class="viewTable">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Med Name</th>
+              <th>Entry Date</th>
+              <th>Expiry Date</th>
+              <th>Number of Units</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% stock.forEach(function(med){ %>
+              <% if(med.units <  50){ %>
+              <tr>
+                <td class="lowStock"><%= med._id %></td>
+                <td class="lowStock"><%= med.medName %></td>
+                <td class="lowStock"><%= new Date(med.entryDate).toLocaleDateString() %></td>
+                <td class="lowStock"><%= new Date(med.expiryDate).toLocaleDateString() %></td>
+                <td class="lowStock"><%= med.units %></td>
+              </tr>
+            <% }else{ %>
+            <% 
+              // Assuming `med.expiryDate` is a valid date string or Date object 
+              
+              // Get today's date
+              const date1 = date(); // This will return the current date from the date.js module
+              
+              // Convert expiryDate to a Date object (ensure it's a Date object)
+              const date2 = new Date(med.expiryDate); 
+              
+              // Calculate the difference in time (milliseconds)
+              const diffTime = (date2 - date1);
+              
+              // Calculate the difference in days
+              const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24)); 
+              
+            %>
+            <%  if(med.units > 1500){ %>
+                <tr>
+                  <td class="overStock"><%= med._id %></td>
+                  <td class="overStock"><%= med.medName %></td>
+                  <td class="overStock"><%= new Date(med.entryDate).toLocaleDateString() %></td>
+                  <td class="overStock"><%= new Date(med.expiryDate).toLocaleDateString() %></td>
+                  <td class="overStock"><%= med.units %></td>
+                </tr>
+                <% }else if(diffDays <= 0){ %>
+                  <tr>
+                    <td class="expired"><%= med._id %></td>
+                    <td class="expired"><%= med.medName %></td>
+                    <td class="expired"><%= new Date(med.entryDate).toLocaleDateString() %></td>
+                    <td class="expired"><%= new Date(med.expiryDate).toLocaleDateString() %></td>
+                    <td class="expired"><%= med.units %></td>
+                  </tr>
+              <% }else if(diffDays <= 60){ %>
+                <tr>
+                  <td class="expiringSoon"><%= med._id %></td>
+                  <td class="expiringSoon"><%= med.medName %></td>
+                  <td class="expiringSoon"><%= new Date(med.entryDate).toLocaleDateString() %></td>
+                  <td class="expiringSoon"><%= new Date(med.expiryDate).toLocaleDateString() %></td>
+                  <td class="expiringSoon"><%= med.units %></td>
+                </tr>
+                
+            <%  }else{ %>
+              <tr >
+                <td><%= med._id %></td>
+                <td><%= med.medName %></td>
+                <td><%= new Date(med.entryDate).toLocaleDateString() %></td>
+                <td><%= new Date(med.expiryDate).toLocaleDateString() %></td>
+                <td><%= med.units %></td>
+              </tr>
+            <% } %>
+            <% } %>
+            <% }); %>
+            <%} else{ %>
+              <h3 class="viewngError">No stock found!</h3>
+            <% } %>
+          </tbody>
+        </table>
+      </div>
+      
+
+<%- include("footer") -%>

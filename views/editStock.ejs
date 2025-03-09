@@ -1,0 +1,94 @@
+<%- include("header") -%>
+<body class="bg-dark">
+    <!-- Navabar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+          <img src="images/first-aid-kit.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
+          <a class="navbar-brand mb-0 h1" href="#">MediFlow</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="/">Home</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link active dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Manage
+                </a>
+                <ul class="dropdown-menu bg-dark">
+                  <li><a class="dropdown-item" href="/sell">Sell</a></li>
+                  <li><a class="dropdown-item" href="/edit">Edit Stock</a></li>
+                  <li><a class="dropdown-item" href="/restock">Restock</a></li>
+                  <li><a class="dropdown-item" href="/view">View Stock</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/#about-section">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/#footer-section">Contact</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+        
+
+      
+<div class="edit">
+    <h1 class="heading">Edit Stock</h1>
+    <main class="form-signin w-100 m-auto">
+        <form action="/edit" method="post">
+          <img class="mb-4" src="images/editStock.png" alt="" width="100" height="72">
+      
+          <div class="form-floating">
+            <input type="text" class="form-control top" name="department" placeholder="Department" value="<%= department %>">
+            <label>Department</label>
+          </div>
+          <div class="form-floating">
+            <input type="text" class="form-control middle" name="id" placeholder="id" value="<%= id %>">
+            <label>ID</label>
+          </div>
+          <div class="form-floating">
+            <select name="option" class="form-control bottom">
+              <option value="medName" <%= selectedOption === 'medName' ? 'selected' : '' %>>Med Name</option>
+              <option value="units" <%= selectedOption === 'units' ? 'selected' : '' %>>Units</option>
+              <option value="expiryDate" <%= selectedOption === 'expiryDate' ? 'selected' : '' %>>Expiry date</option>
+              <option value="entryDate" <%= selectedOption === 'entryDate' ? 'selected' : '' %>>Entry date</option>
+              <option value="remove" <%= selectedOption === 'remove' ? 'selected' : '' %>>Remove</option>
+            </select>
+            <label for="option">Option</label>
+          </div>
+          <% if  (( selectedOption  ) === "medName") { %>
+            <div class="form-floating">
+              <input type="text" class="form-control extra solo" name="newValue" placeholder="New Value">
+              <label>New Value</label>
+            </div>
+          <% } %>
+          <% if  (( selectedOption  ) === "units") { %>
+            <div class="form-floating">
+              <input type="BigInt" class="form-control extra solo" name="newValue" placeholder="New Value">
+              <label>New Value</label>
+            </div>
+          <% } %>
+          <% if  ( ( selectedOption  ) === "entryDate" || ( selectedOption )  === "expiryDate") { %>
+            <div class="form-floating">
+              <input type="date" class="form-control extra solo" name="newValue" placeholder="New Value">
+              <label>New Value</label>
+            </div>
+          <% } %>
+          
+          <div>
+            <button class="w-100 btn btn-lg btn-warning" type="submit">Edit</button>
+          </div>
+          
+        </form>
+      </main>    
+</div>
+   
+<%- include("footer") -%>
+
+
+

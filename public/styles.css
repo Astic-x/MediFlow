@@ -1,0 +1,112 @@
+
+/* Navbar  */
+    .navbar{
+    padding: 3rem 7% 0;
+    }
+    .navbar-brand{
+        font-size: 2rem;
+        font-family: "Montserrat";
+        font-weight: bold;
+    }
+    .dropdown-item{
+        color: #fff;
+    }
+
+
+/* Title  Section*/
+    .big-title{
+        padding-right: 10%;
+    }
+    .big-title h1{
+        font-family: "Montserrat Black";
+        color: #fff;
+        text-align: center;
+        line-height: 1.5;
+        padding-top: 5rem;
+    }
+    .big-title-img{
+        position: relative;
+        text-align: center;
+        width: 50%;
+    }
+
+    @media (max-width: 1290px) {
+        .big-title-img {
+            transform:scale(0.8); /* Rotate image 90 degrees */
+            max-width: 100%; /* Prevents image from overflowing horizontally */
+        }
+    }
+
+    @media (max-width: 600px) {
+        .big-title-img {
+            margin-top: 150px;
+            transform: rotate(-45deg) scale(0.7); /* Rotate image 90 degrees */
+            max-width: 100%; /* Prevents image from overflowing horizontally */
+        }
+    }
+
+    #title{
+        margin: 2%;
+        padding: 6rem 0 0;
+        background-color: #4F75FF;
+        text-align: center;
+    }
+
+
+/* Manage Section  */
+    #manage-section{
+        margin: 2%;
+        padding: 6rem 3% 6rem 2%;
+    }
+    .manage-title{
+        font-family: "Montserrat Black";
+        font-size: 4rem;
+        padding-bottom: 2.5rem;
+        margin-left: 4%;
+    }
+    .manage-button{
+        margin: 2% 3% 2% 3%;
+        height: 10rem;
+    }
+    .manage-button-title{
+        font-family: "Ubuntu";
+        padding: 3% 0;
+    }
+    button h5{
+        font-weight: normal;
+        font-family: "Ubuntu";
+        padding: 0 10%;
+    }
+
+
+/* About section  */
+
+    #about-section{
+        background-color: #4F75FF;
+        margin: 2%;
+        padding: 6rem 3% 6rem 2%;
+    }
+    .about-title{
+        color: #fff;
+        font-family: "Montserrat ";
+        font-size: 4rem;
+        padding-bottom: 2.5rem;
+        margin-left: 4%;
+    }
+    .about-text h4{
+        padding: 3%;
+        line-height: 1.5;
+    }
+    .carousel-div{
+        margin: 3rem 2rem 1rem;
+    }
+
+
+/* Footer and contact section */
+    
+    #footer-section{
+        background-color: rgba(33, 37, 41, 1);
+        font-family: "Ubuntu";
+        text-align: center;
+        color: #fff;
+    }

@@ -1,0 +1,148 @@
+
+body {
+  height: 100%;
+}
+
+.form-signin {
+  max-width: 330px;
+  padding: 2rem 0;
+}
+
+.form-signin .form-floating:focus-within {
+  z-index: 2;
+}
+
+
+.oneOnly{
+    margin-bottom: 10px;
+}
+.top{
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.middle {
+    border-radius: 0;
+    margin-bottom: -1px;
+}
+
+.bottom{
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.solo{
+  margin-bottom: 10px;
+}
+
+.heading{
+    color: #fff;
+    text-align: center;
+    font-family: "Montserrat Black";
+  }
+
+
+/* Restock */
+
+.restock{
+    padding: 3rem;
+}
+
+
+/* Sell  */
+
+.sell{
+    padding: 3rem;
+}
+
+/* View  */
+
+.view{
+    padding: 3rem;
+}
+
+/* viewing  */
+.viewing{
+  padding-top: 3rem;
+}
+.viewingHeading{
+  color: #fff;
+  text-align: center;
+  font-family: "Montserrat Black";
+}
+.viewngError{
+  color: #fff;
+  text-align: center;
+  font-family: "Montserrat Black";
+  padding: 3rem 0;
+}
+table {
+  width: 100%;
+  border-collapse: collapse; /* Ensures borders collapse together for a cleaner look */
+  color: white; /* Text color */
+  margin: 3rem 0;
+}
+th, td {
+  border: 1px solid white; /* White border for table cells */
+  padding: 8px; /* Adds some padding for readability */
+  text-align: left; /* Align text to the left */
+  font-family: "Ubuntu";
+}
+th {
+  background-color: #333; /* Dark background for the header */
+}
+td {
+  background-color: #444; /* Dark background for the table rows */
+}
+tr:nth-child(even) {
+  background-color: #555; /* Alternating row colors for better readability */
+}
+tr:hover {
+  background-color: #666; /* Highlight rows on hover */
+}
+.colorInfo{
+  padding-left: 5rem;
+  color: #fff;
+
+}
+.colorCodeDetail1{
+  display: ;
+  height: 20px;
+  width: 20px;
+  background-color: #0A5EB0;
+} 
+.colorCodeDetail2{
+  height: 20px;
+  width: 20px;
+  background-color: #9694FF;
+} 
+.colorCodeDetail3{
+  height: 20px;
+  width: 20px;
+  background-color: #F26B0F;
+} 
+.colorCodeDetail4{
+  height: 20px;
+  width: 20px;
+  background-color: #B8001F;
+} 
+.lowStock{
+  background-color: #0A5EB0;
+}
+.overStock{
+  background-color: #9694FF;
+}
+.expiringSoon{
+  background-color: #F26B0F;
+}
+.expired{
+  background-color: #B8001F;
+}
+
+/* Edit */
+
+.edit{
+    padding: 3rem;
+}

@@ -1,0 +1,59 @@
+<%- include("header") -%>
+
+<body class="bg-dark">
+    <!-- Navabar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+          <img src="images/first-aid-kit.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
+          <a class="navbar-brand mb-0 h1" href="#">MediFlow</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="/">Home</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link active dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Manage
+                </a>
+                <ul class="dropdown-menu bg-dark">
+                  <li><a class="dropdown-item" href="/sell">Sell</a></li>
+                  <li><a class="dropdown-item" href="/edit">Edit Stock</a></li>
+                  <li><a class="dropdown-item" href="/restock">Restock</a></li>
+                  <li><a class="dropdown-item" href="/view">View Stock</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/#about-section">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/#footer-section">Contact</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+
+      <div class="view">
+        <h1 class="heading">View Stock</h1>
+        <main class="form-signin w-100 m-auto">
+            <form action="/viewing" method="post">
+              <img class="mb-4" src="images/viewStock.png" alt="" width="90" height="100">
+          
+              <div class="form-floating">
+                <input type="text" class="form-control oneOnly" name="department" placeholder="Department">
+                <label>Department</label>
+              </div>
+          
+              <div>
+                <button class="w-100 btn btn-lg btn-primary" type="submit">View</button>
+              </div> 
+            </form>
+          </main>    
+    </div>
+
+
+<%- include("footer") -%>
