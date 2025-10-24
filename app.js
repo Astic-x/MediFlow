@@ -3,6 +3,11 @@ const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const _ = require("lodash");
 const date = require(__dirname + "/date.js");
+const dotenv =require("dotenv");
+dotenv.config();
+
+
+const uri = process.env.MONGO_URI;
 
 
 
@@ -19,7 +24,7 @@ app.use(express.static("public"));
 main().catch(err => console.log(err));
 
 async function main() {
-await mongoose.connect("mongodb+srv://anitamalik2016am:PVxurfShQERrrpGq@mediflow.qzrif.mongodb.net/medInventoryDB");
+await mongoose.connect(uri);
 }
 
 const medSchema = new mongoose.Schema({
